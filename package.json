@@ -11,8 +11,6 @@
   "devDependencies": {
     "tap-spec": "^5.0.0",
     "tape": "^4.9.1"
-  },
-  "dependencies": {
-    "xmlhttprequest": "^1.8.0"
   }
+
 }

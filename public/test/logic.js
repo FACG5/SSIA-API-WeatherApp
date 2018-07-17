@@ -1,6 +1,7 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-module.exports={
- fetch:function(url, cb) {
+
+
+ function fetch(url, cb) {
 
   var xhr = new XMLHttpRequest();
     xhr.onreadystatechange= function() {
@@ -26,23 +27,26 @@ module.exports={
     }
     xhr.open('GET', url, true);
     xhr.send();
-},
+}
 
-getName : function (result){  
+  function getName(result){  
 return result.name;
-},
+}
 
-getCountryName : function (result){  
+  function  getCountryName(result){  
   return result.sys.country;
-  },
+  }
 
-  getWeatherMain : function (result){  
+    function getWeatherMain(result){  
     return result.weather[0].main;
-    },
-    getWeatherDescription : function (result){  
+    }
+      function getWeatherDescription(result){  
       return result.sys.country;
-      },
-      getWeatherIcon : function (result){  
+      }
+        function getWeatherIcon (result){  
         return result.sys.country;
-        },
+        }
+
+if (typeof module !== 'undefined') {
+  module.exports = {getCountryName,getWeatherMain,getWeatherDescription,getWeatherIcon,getName,fetch };
 }

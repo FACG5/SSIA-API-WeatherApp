@@ -1,12 +1,10 @@
-var MyMethods = require("./logic.js");
-
 var test = require("tape");
-
+var MyMethods = require("./logic.js");
 test("test for city&Country", function(t) {
   var url =
     "http://api.openweathermap.org/data/2.5/weather?q=gaza,ps&APPID=4638dc94ad7887e67dc768fd6a6c909c";
 
-  MyMethods.fetch(url, function(result) {
+    MyMethods.fetch(url, function(result) {
     var country = result.sys.country;
     var city = result.name;
     var actual = city + "," + country;

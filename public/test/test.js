@@ -71,3 +71,14 @@ test("Test for get Name ", function(t) {
     t.end();
   });
 });
+
+test("Test City Name", function (t) {
+	var url = "http://api.openweathermap.org/data/2.5/weather?q=gaza,ps&APPID=4638dc94ad7887e67dc768fd6a6c909c";
+
+	MyMethods.fetch(url, function (result) {
+		var actual = result.name;
+		var expected = "Gaza"
+		t.deepEqual(actual, expected, 'the city name passed');
+		t.end();
+	})
+});

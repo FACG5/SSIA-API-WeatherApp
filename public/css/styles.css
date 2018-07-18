@@ -51,7 +51,7 @@ main {
 }
 
 .btn {
-  background: #000d1a;
+  background: #797b7c;
   display: inline-block;
   color: #fff;
   outline: none;
@@ -62,13 +62,16 @@ main {
   padding: 10px;
   height: 50px;
   margin-left: 20px;
+  border: none;
+  transition-duration: 0.4s;
 }
 
 .btn:hover {
-  background: none;
-  color: #fff;
+  background:rgba(0, 0, 0, 0.1);
+  color: #000000;
   border: 2px solid #000;
   cursor: pointer;
+  border: none;
 }
 
 #header {
@@ -96,7 +99,9 @@ main {
   height: 30px;
   color: #ffff;
   font-size: 19px;
-  background: none;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  transition-duration: 0.4s;
 }
 
 input::placeholder {
@@ -107,6 +112,9 @@ input::placeholder {
   text-align: center;
   font-size: 20px;
   margin-top: 5%;
+}
+input:hover{
+  background-color: #797b7c;
 }
 
 .img{
@@ -121,6 +129,21 @@ font-size: 20px;
 }
 .diss{
 color: #fff;
+}
+.buttonStyle{
+height: 30px;
+width: 32px;
+padding: 0;
+border: none;
+border-radius: 100%;
+line-height: 30px;
+color: white;
+background-color: #000;
+font-size: 20px;
+font-weight: 100;
+text-align: center;
+box-shadow: 0 5px 8px rgba(0, 0, 0, 0.32);
+transition: 0.2s;
 }
 
 /* From here the Dom will build the styles*/

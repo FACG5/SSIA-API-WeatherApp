@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  position: absolute;
+  background-size: cover;
+  background-image: url("/public/img/background.jpg");
+  height: 100%;
+  width: 100%;
+  filter: blur(2px);
+}
+main {
+  position: relative;
+}

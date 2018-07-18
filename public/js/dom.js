@@ -1,3 +1,5 @@
+
+
 function getElementById(elementId) {
   return document.getElementById(elementId);
 }
@@ -13,7 +15,7 @@ submit.addEventListener("click", function(e) {
   var url =
     "http://api.openweathermap.org/data/2.5/weather?q=" +
     cityNameValue +
-    "&APPID="+myKey;
+    "&APPID="+config.MY_KEY;
     // console.log(url);
     
   fetch(url, function(result) {
@@ -27,7 +29,7 @@ submit.addEventListener("click", function(e) {
         getName(result) +
         "," +
         getCountryName(result) +
-        "&APPID="+myKey;
+        "&APPID="+config.MY_KEY;
       fetch(urlOfForecast, function(result) {
         fiveDay = getNextFiveDay(result);
         console.log(fiveDay);
@@ -36,7 +38,7 @@ submit.addEventListener("click", function(e) {
         console.log(xxx);
       });
     } else {
-      alert("ff");
+      alert("city not found");
       return;
     }
   });

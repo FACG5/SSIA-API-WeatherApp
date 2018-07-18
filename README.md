@@ -17,6 +17,7 @@ ___
 # **User Journey**
 * As a user I want to know the weather of city: enter city name,country (ex: Gaza,ps) I need to know its weather into a input text so that I will know the weather of it,view the weather by temperature and description (ex: clear sky),also I can forcast the climate for 5 days
 * As a user wants to read on mobile, tablet or desktop.
+___
 
 # **Architecture
 

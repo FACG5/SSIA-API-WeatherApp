@@ -21,15 +21,15 @@ ___
 # **Architecture
 
 * public
- * css
-  * styles.css
- * img
- * js
-  * dom.js
-  * logic.js
- * test
-  * test.js
- * index.html
+  * css
+    * styles.css
+  * img
+  * js
+    * dom.js
+    * logic.js
+  * test
+    * test.js
+  * index.html
 * README
 * .gitignore 
 * package-lock.json

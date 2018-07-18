@@ -1,4 +1,3 @@
-
 if (typeof module !== "undefined") {
   var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 }
@@ -8,12 +7,12 @@ function fetch(url, cb) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
-      if (xhr.status == 200) { 
-        // ready 
+      if (xhr.status == 200) {
+        // ready
         var result = JSON.parse(xhr.responseText);
         cb(result);
       } else if (xhr.status == 404) {
-        // error 
+        // error
         var result = JSON.parse(xhr.responseText);
         cb(result);
       } else if (xhr.status == 400) {
@@ -37,7 +36,7 @@ function getListLength(result) {
   return result.list.length;
 }
 function getWeatherTemp(result) {
-  return result.main.temp - 273.15;
+  return Math.round(result.main.temp - 273.15);
   //kelvin to celsius
 }
 
@@ -87,11 +86,19 @@ function getForecastTemp(arr) {
 function getForecastMain(result, i) {
   return result.list[i].weather[0].main;
 }
-function getForecastDescription(result, i) {
-  return result.list[i].weather[0].description;
+function getForecastDescription(arr) {
+  var tempArr = [];
+  for (var i = 0; i < arr.length; i++) {
+    tempArr.push(arr[i].weather[0].description);
+  }
+  return tempArr;
 }
-function getForecastIcon(result, i) {
-  return result.list[i].weather[0].icon;
+function getForecastIcon(arr) {
+  var tempArr = [];
+  for (var i = 0; i < arr.length; i++) {
+    tempArr.push(arr[i].weather[0].icon);
+  }
+  return tempArr;
 }
 
 if (typeof module !== "undefined") {
@@ -110,7 +117,6 @@ if (typeof module !== "undefined") {
     checkNextDayTime,
     getMessage,
     getListLength,
-    getWeatherTemp,
-    
+    getWeatherTemp
   };
 }

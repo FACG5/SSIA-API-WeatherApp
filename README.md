@@ -1,11 +1,6 @@
 # **[SIAA Weather App Link](https://facg5.github.io/SSIA-API-WeatherApp/public/index.html)**
 **API Project**
-
-**SSIA Team**
-
-
-# **[SIAA Weather App Link](https://facg5.github.io/SSIA-API-WeatherApp/public/index.html)**
-
+___
 # **Why**
 
 To learn how to use several APIs and use the result to update DOM, and test it using TDD.

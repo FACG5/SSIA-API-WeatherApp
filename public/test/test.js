@@ -1,8 +1,10 @@
 var test = require("tape");
 var myMethod = require("../js/logic.js");
+var myKey=require('../js/config.js')
+
 test("test for city&Country", function(t) {
   var url =
-    "http://api.openweathermap.org/data/2.5/weather?q=gaza,ps&APPID=4638dc94ad7887e67dc768fd6a6c909c";
+    "http://api.openweathermap.org/data/2.5/weather?q=gaza,ps&APPID="+myKey.MY_KEY;
 
   myMethod.fetch(url, function(result) {
     var country = myMethod.getCountryName(result);
@@ -15,7 +17,7 @@ test("test for city&Country", function(t) {
 });
 test("test for wrong entry", function(t) {
   var url =
-    "http://api.openweathermap.org/data/2.5/weather?q=ssssss&APPID=4638dc94ad7887e67dc768fd6a6c909c";
+    "http://api.openweathermap.org/data/2.5/weather?q=ssssss&APPID="+myKey.MY_KEY;
   myMethod.fetch(url, function(result) {
     var actual = myMethod.getMessage(result);
     var expected = "city not found";
@@ -29,7 +31,7 @@ test("test for empty entry", function(t) {
   var url =
     "http://api.openweathermap.org/data/2.5/weather?q=" +
     cityName +
-    "&APPID=4638dc94ad7887e67dc768fd6a6c909c";
+    "&APPID="+myKey.MY_KEY;
   myMethod.fetch(url, function(result) {
     var actual = myMethod.getMessage(result);
     var expected = "Nothing to geocode";
@@ -40,7 +42,7 @@ test("test for empty entry", function(t) {
 
 test("Test for get Name ", function(t) {
   var url =
-    "http://api.openweathermap.org/data/2.5/weather?q=gaza,ps&APPID=4638dc94ad7887e67dc768fd6a6c909c";
+    "http://api.openweathermap.org/data/2.5/weather?q=gaza,ps&APPID="+myKey.MY_KEY;
   myMethod.fetch(url, function(result) {
     var actual = myMethod.getName(result);
     var expected = "Gaza";
@@ -51,7 +53,7 @@ test("Test for get Name ", function(t) {
 
 test("Test Next Five Day ", function(t) {
   var url =
-    "http://api.openweathermap.org/data/2.5/forecast?q=gaza,ps&APPID=4638dc94ad7887e67dc768fd6a6c909c";
+    "http://api.openweathermap.org/data/2.5/forecast?q=gaza,ps&APPID="+myKey.MY_KEY;
 
   myMethod.fetch(url, function(result) {
     var actual = myMethod.getNextFiveDay(result).length;
@@ -65,7 +67,7 @@ test("Test Next Five Day ", function(t) {
 
 test("Test Next Five Day at 3:00 PM", function(t) {
   var url =
-    "http://api.openweathermap.org/data/2.5/forecast?q=gaza,ps&APPID=4638dc94ad7887e67dc768fd6a6c909c";
+    "http://api.openweathermap.org/data/2.5/forecast?q=gaza,ps&APPID="+myKey.MY_KEY;
 
   myMethod.fetch(url, function(result) {
     var actual = myMethod.getNextFiveDay(result,myMethod.checkNextDayTime);
@@ -75,10 +77,11 @@ test("Test Next Five Day at 3:00 PM", function(t) {
     t.end();
   });
 });
-//**** These tests Will Be Failed Because actula result count change everyday ****/
+
+// /**** These tests Will Be Failed Because actula result count change everyday ****/
 // test("test for forecasting entry count", function(t) {
 //   var url =
-//     "http://api.openweathermap.org/data/2.5/forecast?q=gaza,ps&APPID=4638dc94ad7887e67dc768fd6a6c909c";
+//     "http://api.openweathermap.org/data/2.5/forecast?q=gaza,ps&APPID="+myKey.MY_KEY;
 //   myMethod.fetch(url, function(result) {
 //     var actual =myMethod.getListLength(result);
 //     var expected = 38;
@@ -90,7 +93,7 @@ test("Test Next Five Day at 3:00 PM", function(t) {
 
 // test("Test for get Main Weather ", function(t) {
 //   var url =
-//     "http://api.openweathermap.org/data/2.5/weather?q=gaza,ps&APPID=4638dc94ad7887e67dc768fd6a6c909c";
+//     "http://api.openweathermap.org/data/2.5/weather?q=gaza,ps&APPID="+myKey.MY_KEY;
 //   myMethod.fetch(url, function(result) {
 //     var actual = myMethod.getWeatherMain(result);
 //     var expected = "Clear";
@@ -100,7 +103,7 @@ test("Test Next Five Day at 3:00 PM", function(t) {
 // });
 // test("Test For Get Weather Main", function(t) {
 //   var url =
-//     "http://api.openweathermap.org/data/2.5/weather?q=gaza,ps&APPID=4638dc94ad7887e67dc768fd6a6c909c";
+//     "http://api.openweathermap.org/data/2.5/weather?q=gaza,ps&APPID="+myKey.MY_KEY;
 
 //   myMethod.fetch(url, function(result) {
 //     var actual = myMethod.getWeatherMain(result);
@@ -113,7 +116,7 @@ test("Test Next Five Day at 3:00 PM", function(t) {
 // });
 // test("Test For Get Forecast Description", function(t) {
 //   var url =
-//     "http://api.openweathermap.org/data/2.5/forecast?q=gaza,ps&APPID=4638dc94ad7887e67dc768fd6a6c909c";
+//     "http://api.openweathermap.org/data/2.5/forecast?q=gaza,ps&APPID="+myKey.MY_KEY;
 
 //   myMethod.fetch(url, function(result) {
 //     var actual = myMethod.getForecastDescription(result,0);
@@ -126,7 +129,7 @@ test("Test Next Five Day at 3:00 PM", function(t) {
 // });
 // test("get Weather Temp ", function(t) {
 //   var url =
-// "http://api.openweathermap.org/data/2.5/weather?q=gaza,ps&APPID=4638dc94ad7887e67dc768fd6a6c909c";
+// "http://api.openweathermap.org/data/2.5/weather?q=gaza,ps&APPID="+myKey.MY_KEY;
 //   myMethod.fetch(url, function(result) {
 //     var actual = myMethod.getWeatherTemp(result);
 //     var expected = 27;
@@ -138,7 +141,7 @@ test("Test Next Five Day at 3:00 PM", function(t) {
 // });
 
 // test("get Weather Temp ", function(t) {
-//   var url ="http://api.openweathermap.org/data/2.5/forecast?q=gaza,ps&APPID=4638dc94ad7887e67dc768fd6a6c909c";
+//   var url ="http://api.openweathermap.org/data/2.5/forecast?q=gaza,ps&APPID="+myKey.MY_KEY;
 //   myMethod.fetch(url, function(result) {
 //     var actual = myMethod.getNextFiveDay(result,myMethod.getForecastTemp)
 //     var expected =[ 29, 27, 28, 28, 27 ];

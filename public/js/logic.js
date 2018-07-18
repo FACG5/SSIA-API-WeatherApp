@@ -87,11 +87,19 @@ function getForecastTemp(arr) {
 function getForecastMain(result, i) {
   return result.list[i].weather[0].main;
 }
-function getForecastDescription(result, i) {
-  return result.list[i].weather[0].description;
+function getForecastDescription(arr) {
+  var tempArr = [];
+  for (var i = 0; i < arr.length; i++) {
+    tempArr.push(arr[i].weather[0].description);
+  }
+  return tempArr;
 }
-function getForecastIcon(result, i) {
-  return result.list[i].weather[0].icon;
+function getForecastIcon(arr) {
+  var tempArr = [];
+  for (var i = 0; i < arr.length; i++) {
+    tempArr.push(arr[i].weather[0].icon);
+  }
+  return tempArr;
 }
 
 if (typeof module !== "undefined") {

@@ -78,6 +78,7 @@ test("Test Next Five Day at 3:00 PM", function(t) {
   });
 });
 
+
 // /**** These tests Will Be Failed Because actula result count change everyday ****/
 // test("test for forecasting entry count", function(t) {
 //   var url =
@@ -114,19 +115,7 @@ test("Test Next Five Day at 3:00 PM", function(t) {
 //     t.end();
 //   });
 // });
-// test("Test For Get Forecast Description", function(t) {
-//   var url =
-//     "http://api.openweathermap.org/data/2.5/forecast?q=gaza,ps&APPID="+myKey.MY_KEY;
 
-//   myMethod.fetch(url, function(result) {
-//     var actual = myMethod.getForecastDescription(result,0);
-//     var expected = "clear sky";
-  
-
-//     t.deepEqual(actual, expected, "get forecast description is work");
-//     t.end();
-//   });
-// });
 // test("get Weather Temp ", function(t) {
 //   var url =
 // "http://api.openweathermap.org/data/2.5/weather?q=gaza,ps&APPID="+myKey.MY_KEY;
@@ -148,6 +137,32 @@ test("Test Next Five Day at 3:00 PM", function(t) {
   
 
 //     t.deepEqual(actual, expected, "get Weather Temp is Work");
+//     t.end();
+//   });
+// });
+// test("Test For Get Forecast Description", function(t) {
+//   var url =
+//     "http://api.openweathermap.org/data/2.5/forecast?q=gaza,ps&APPID="+myKey.MY_KEY;
+
+//   myMethod.fetch(url, function(result) {
+//     var actual = myMethod.getNextFiveDay(result,myMethod.getForecastDescription);
+//     var expected = [ 'clear sky', 'light rain', 'light rain', 'clear sky', 'clear sky' ];
+  
+
+//     t.deepEqual(actual, expected, "get forecast description is work");
+//     t.end();
+//   });
+// });
+// test("Test For Get Forecast Description", function(t) {
+//   var url =
+//     "http://api.openweathermap.org/data/2.5/forecast?q=gaza,ps&APPID="+myKey.MY_KEY;
+
+//   myMethod.fetch(url, function(result) {
+//     var actual = myMethod.getNextFiveDay(result,myMethod.getForecastIcon);
+//     var expected =  [ '01d', '10d', '10d', '01d', '01d' ];
+  
+
+//     t.deepEqual(actual, expected, "get forecast description is work");
 //     t.end();
 //   });
 // });

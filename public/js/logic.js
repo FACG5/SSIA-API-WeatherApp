@@ -1,4 +1,3 @@
-
 if (typeof module !== "undefined") {
   var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 }
@@ -8,12 +7,12 @@ function fetch(url, cb) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
-      if (xhr.status == 200) { 
-        // ready 
+      if (xhr.status == 200) {
+        // ready
         var result = JSON.parse(xhr.responseText);
         cb(result);
       } else if (xhr.status == 404) {
-        // error 
+        // error
         var result = JSON.parse(xhr.responseText);
         cb(result);
       } else if (xhr.status == 400) {
@@ -37,7 +36,7 @@ function getListLength(result) {
   return result.list.length;
 }
 function getWeatherTemp(result) {
-  return result.main.temp - 273.15;
+  return Math.round(result.main.temp - 273.15);
   //kelvin to celsius
 }
 
@@ -118,7 +117,6 @@ if (typeof module !== "undefined") {
     checkNextDayTime,
     getMessage,
     getListLength,
-    getWeatherTemp,
-    
+    getWeatherTemp
   };
 }

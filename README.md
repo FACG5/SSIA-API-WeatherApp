@@ -1,4 +1,4 @@
-### **[SIAA Weather App Link](https://facg5.github.io/SSIA-API-WeatherApp/public/index.html)**
+### **[SIAA Weather App Link](https://facg5.github.io/SSIA-API-WeatherApp/)**
 
 # **SSIA Weather App**
 ## **Why**

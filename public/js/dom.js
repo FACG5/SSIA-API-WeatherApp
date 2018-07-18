@@ -8,14 +8,16 @@ var cityname = getElementById("cityname");
 submit.addEventListener("click", function(e) {
   // console.log(submi/t);
   var cityNameValue = cityname.value;
-  // console.log(cityNameValue);
+  console.log(cityNameValue,"namee");
   e.preventDefault();
   var url =
     "http://api.openweathermap.org/data/2.5/weather?q=" +
     cityNameValue +
-    "&APPID=4638dc94ad7887e67dc768fd6a6c909c";
+    "&APPID="+myKey;
+    // console.log(url);
+    
   fetch(url, function(result) {
-    console.log(result, "dddd");
+    console.log(result, "here");
 
     if (result.cod != 404) {
       console.log(getCountryName(result));
@@ -25,7 +27,7 @@ submit.addEventListener("click", function(e) {
         getName(result) +
         "," +
         getCountryName(result) +
-        "&APPID=4638dc94ad7887e67dc768fd6a6c909c";
+        "&APPID="+myKey;
       fetch(urlOfForecast, function(result) {
         fiveDay = getNextFiveDay(result);
         console.log(fiveDay);

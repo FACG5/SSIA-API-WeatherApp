@@ -1,17 +1,23 @@
+
 if (typeof module !== "undefined") {
   var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 }
+
+// Fetch Function for APIs
 function fetch(url, cb) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
-      if (xhr.status == 200) {
+      if (xhr.status == 200) { 
+        // ready 
         var result = JSON.parse(xhr.responseText);
         cb(result);
       } else if (xhr.status == 404) {
+        // error 
         var result = JSON.parse(xhr.responseText);
         cb(result);
       } else if (xhr.status == 400) {
+        // no entry
         var result = JSON.parse(xhr.responseText);
         cb(result);
       }
@@ -104,6 +110,7 @@ if (typeof module !== "undefined") {
     checkNextDayTime,
     getMessage,
     getListLength,
-    getWeatherTemp
+    getWeatherTemp,
+    
   };
 }

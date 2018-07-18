@@ -72,5 +72,5 @@ A clearly defined user journey, documented in your readme.
 - [x] Code: break your JavaScript down into small functions with a clear input and output; this will make it easy to write tests
 - [x] Tests: you must write tests!
 - [x] Design: aim for a responsive, mobile-first design
-- [ ] Accessibility: same as always, we'll be running your code through accessibility checkers
+- [x] Accessibility: same as always, we'll be running your code through accessibility checkers
 - [x] Take appropriate measures when it comes to concealing private information (i.e. your API key!)

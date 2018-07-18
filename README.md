@@ -1,6 +1,6 @@
 # weather app
 
-**SSIA Team **
+**SSIA Team**
 
 
 # **[SIAA Weather App Link](https://facg5.github.io/SSIA-API-WeatherApp/public/index.html)**
@@ -19,7 +19,7 @@ ___
 * As a user wants to read on mobile, tablet or desktop.
 ___
 
-# **Architecture
+# **Architecture**
 
 * public
   * css
